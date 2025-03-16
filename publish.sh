@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "=== CodeCleaner PyPI Publication Script ==="
+echo "=== pycodeclean PyPI Publication Script ==="
 echo ""
 
 # Step 1: Make sure build tools are installed
@@ -26,12 +26,12 @@ echo ""
 # Step 5: Ask for confirmation before uploading
 read -p "Ready to upload to PyPI? (y/n): " confirm
 if [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]]; then
-    echo "Uploading to PyPI..."
-    python -m twine upload dist/*
-    echo ""
-    echo "Package published to PyPI!"
-    echo "Users can now install with: pip install codecleaner"
+	echo "Uploading to PyPI..."
+	python -m twine upload dist/*
+	echo ""
+	echo "Package published to PyPI!"
+	echo "Users can now install with: pip install pycodeclean"
 else
-    echo "Upload canceled."
-    echo "To upload later, run: python -m twine upload dist/*"
+	echo "Upload canceled."
+	echo "To upload later, run: python -m twine upload dist/*"
 fi
