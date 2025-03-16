@@ -8,14 +8,14 @@ with open(os.path.join(os.path.dirname(__file__), 'README.md'), encoding='utf-8'
     long_description = f.read()
 
 setup(
-    name="codecleaner",
+    name="pycodeclean",
     version="0.1.0",
     description="A tool to clean up Python code by removing print statements, debug calls, and comments",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Your Name",
     author_email="your.email@example.com",
-    url="https://github.com/yourusername/codecleaner",
+    url="https://github.com/yourusername/pycodeclean",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -38,11 +38,11 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "codecleaner=codecleaner.cli:main",
+            "pycodeclean=pycodeclean.cli:main",
         ],
     },
     project_urls={
-        "Bug Reports": "https://github.com/yourusername/codecleaner/issues",
-        "Source": "https://github.com/yourusername/codecleaner",
+        "Bug Reports": "https://github.com/yourusername/pycodeclean/issues",
+        "Source": "https://github.com/yourusername/pycodeclean",
     },
 )

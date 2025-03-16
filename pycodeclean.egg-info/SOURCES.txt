@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+pycodeclean/__init__.py
+pycodeclean/__main__.py
+pycodeclean/cli.py
+pycodeclean/core.py
+pycodeclean.egg-info/PKG-INFO
+pycodeclean.egg-info/SOURCES.txt
+pycodeclean.egg-info/dependency_links.txt
+pycodeclean.egg-info/entry_points.txt
+pycodeclean.egg-info/top_level.txt

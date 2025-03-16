@@ -1,4 +1,4 @@
-# CodeCleaner
+# PyCodeClean
 
 A Python tool to clean up code by removing specific function calls (like print statements) and comments.
 
@@ -16,14 +16,14 @@ A Python tool to clean up code by removing specific function calls (like print s
 ### From PyPI
 
 ```bash
-pip install codecleaner
+pip install pycodeclean
 ```
 
 ### From Source
 
 ```bash
-git clone https://github.com/yourusername/codecleaner.git
-cd codecleaner
+git clone https://github.com/yourusername/pycodeclean.git
+cd pycodeclean
 pip install -e .
 ```
 
@@ -31,23 +31,23 @@ pip install -e .
 
 ### Basic Usage
 
-Once installed, you can use the `codecleaner` command:
+Once installed, you can use the `pycodeclean` command:
 
 ```bash
 # Remove print statements from a file
-codecleaner file.py
+pycodeclean file.py
 
 # Remove print statements from all Python files in a directory
-codecleaner my_project/
+pycodeclean my_project/
 
 # Remove print statements and comments from files in a directory and subdirectories
-codecleaner my_project/ --remove-comments --recursive
+pycodeclean my_project/ --remove-comments --recursive
 ```
 
 ### Command-line Options
 
 ```
-codecleaner [-h] [--functions FUNCTIONS] [--remove-comments] [--recursive] 
+pycodeclean [-h] [--functions FUNCTIONS] [--remove-comments] [--recursive] 
             [--dry-run] [--no-backup] [--empty-blocks {pass,remove,keep}] path
 ```
 
@@ -61,7 +61,7 @@ codecleaner [-h] [--functions FUNCTIONS] [--remove-comments] [--recursive]
 
 ### Empty Block Handling
 
-When removing function calls, control structures (if/for/while) may become empty. CodeCleaner provides three options:
+When removing function calls, control structures (if/for/while) may become empty. PyCodeClean provides three options:
 
 - `pass` (default): Add a `pass` statement to empty blocks
 - `remove`: Remove the entire empty control structure
@@ -71,27 +71,27 @@ When removing function calls, control structures (if/for/while) may become empty
 
 ```bash
 # Remove print, debug, and logging.info calls
-codecleaner my_project/ -f "print,debug,logging.info" -r
+pycodeclean my_project/ -f "print,debug,logging.info" -r
 
 # Preview what would be removed without changing files
-codecleaner my_project/ -d -c
+pycodeclean my_project/ -d -c
 
 # Remove print statements and remove any resulting empty control blocks
-codecleaner my_project/ --empty-blocks remove
+pycodeclean my_project/ --empty-blocks remove
 
 # Remove print statements without creating backups
-codecleaner my_project/ --no-backup
+pycodeclean my_project/ --no-backup
 ```
 
 ## Backup System
 
-By default, CodeCleaner creates backups of all modified files in the `/tmp` directory with timestamped filenames. For example, a file named `script.py` would be backed up as `/tmp/script_20250316_153000.py` before modification.
+By default, PyCodeClean creates backups of all modified files in the `/tmp` directory with timestamped filenames. For example, a file named `script.py` would be backed up as `/tmp/script_20250316_153000.py` before modification.
 
 To disable backups, use the `--no-backup` flag.
 
 ## How It Works
 
-CodeCleaner uses Python's Abstract Syntax Tree (AST) to parse and transform code, ensuring that only the specified function calls are removed while preserving the overall structure of the code. 
+PyCodeClean uses Python's Abstract Syntax Tree (AST) to parse and transform code, ensuring that only the specified function calls are removed while preserving the overall structure of the code. 
 
 For comment removal, it uses regex patterns to identify and remove comment lines while preserving docstrings.
 
